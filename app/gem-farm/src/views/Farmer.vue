@@ -5,8 +5,8 @@
   </div>
   <div v-else>
     <!--farm address-->
-    <div class="mx-auto flex items-end wrap">
-      <div class="w-full mr-2">
+    <div class="mx-auto flex flex-col md:flex-row md:items-end wrap">
+      <div class="w-full mb-2 md:mb-0 md:mr-2">
         <label class="mb-2 farmerLabel" for="farm">Farm address</label>
         <input
           id="farm"
@@ -277,12 +277,15 @@ export default defineComponent({
 .wrap {
   max-width: 656px;
 }
+
 .bordered {
   border-top: 1px solid #404040;
 }
+
 .item {
   border-bottom: 1px solid #404040;
 }
+
 @media (min-width: 600px) {
   .item__label {
     min-width: 180px;
@@ -292,18 +295,22 @@ export default defineComponent({
     min-width: 160px;
   }
 }
+
 .item__label {
   color: #d0d0d0;
 }
+
 .item__value {
   color: #fff;
 }
+
 .truncate {
   max-width: 360px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .truncate:hover {
   white-space: unset;
   text-overflow: unset;
@@ -311,34 +318,44 @@ export default defineComponent({
 .refresh {
   border: 1px solid #ffffff;
 }
+
 .rewardTitle {
   color: #909090;
 }
+
 .farmerLabel {
   color: #999999;
 }
+
 .farmerInput {
   padding: 16px;
   background: transparent;
   border: 1px solid #404040;
 }
+
 .farmerBtn {
   display: block;
   background: linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
   border-radius: 4px;
   max-width: 200px;
+  width: 100%;
   max-height: 56px;
   padding: 13px;
 }
+
+/* @media  */
+
 .staking {
   color: #141414;
   background: linear-gradient(192.54deg, #9be15d 2.01%, #00e3ae 97.9%),
     linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
 }
+
 .claim {
   color: #141414;
   background: linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
 }
+
 .reward {
   background: linear-gradient(
       90deg,
@@ -347,53 +364,66 @@ export default defineComponent({
     ),
     #191819;
 }
+
 .reward__fixed {
   color: #909090;
 }
+
 .reward__item {
   border-bottom: 1px solid #141414;
 }
+
 .btnHeight {
   max-height: 56px;
 }
+
 .faqMobile {
   height: max-content;
   color: #a1a1a1;
 }
+
 .faq {
   border: 1px solid #1d1d1d;
   height: max-content;
   color: #a1a1a1;
 }
+
 .videoFrame {
   min-height: 186px;
 }
+
 .walletOverflow {
   overflow-wrap: anywhere;
 }
+
 @media (min-width: 768px) {
   .videoFrame {
     min-height: 286px;
   }
 }
+
 .accord__label:after {
   content: '+';
   position: absolute;
   right: 1em;
   color: #fff;
 }
+
 input:checked + .accord__label:after {
   content: '-';
   line-height: 0.8em;
 }
+
 .accordion__content {
   max-height: 0em;
   transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
 }
+
 input[name='panel']:checked ~ .accordion__content {
   /* Get this as close to what height you expect */
   max-height: min-content;
 }
+
 .accord {
   border: 1px solid #1d1d1d;
 }

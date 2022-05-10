@@ -1,5 +1,5 @@
 <template>
-  <div class="acc-container with-title mt-8">
+  <div class="acc-container with-title mt-8 py-4 px-4 md:py-6 md:px-8">
     <p class="text-2xl font-medium text-white mb-8">Your Staking Account</p>
     <ul class="flex flex-col mb-12">
       <li
@@ -266,7 +266,7 @@ export default defineComponent({
 .acc-container {
   border: 1px solid #404040;
   border-radius: 4px;
-  padding: 24px 32px;
+  /* padding: 24px 32px; */
 }
 
 .footer {

@@ -1,5 +1,5 @@
 <template>
-  <div class="faq with-title rounded">
+  <div class="faq mb-4 md:mb-0 with-title rounded">
     <p class="text-base text-white mb-5">{{ title }}</p>
     <div class="mb-2">Accrued reward: {{ reward.accruedReward }}</div>
     <div class="mb-2">Paid out reward: {{ reward.paidOutReward }}</div>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="mb-2 w-full bg-black text-white">Fixed reward:</div>
+      <div class="mb-2 w-full text-white">Fixed reward:</div>
       <div class="mb-2">
         Staking begins: {{ parseDate(reward.fixedRate.beginStakingTs) }}
       </div>
