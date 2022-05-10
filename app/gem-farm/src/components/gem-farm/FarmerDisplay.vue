@@ -1,31 +1,62 @@
 <template>
-  <div class="nes-container with-title">
-    <p class="title">Your Staking Account</p>
-    <div class="mb-2">
-      state:
-      <p class="inline-block bg-yellow-200">
-        {{ parseFarmerState(farmerAcc) }}
-      </p>
-    </div>
-    <div class="mb-2">Your identity: {{ farmerAcc.identity.toBase58() }}</div>
-    <div class="mb-2">Associated vault: {{ farmerAcc.vault.toBase58() }}</div>
-    <div class="mb-2">Gems staked: {{ farmerAcc.gemsStaked }}</div>
-    <div class="mb-2">
-      Min staking ends: {{ parseDate(farmerAcc.minStakingEndsTs) }}
-    </div>
+  <div class="acc-container with-title mt-8">
+    <p class="text-2xl font-medium text-white mb-8">Your Staking Account</p>
+    <ul class="flex flex-col mb-12">
+      <li
+        class="item flex flex-row justify-between md:justify-start md:gap-4 mb-5 pb-5"
+      >
+        <span class="item__label text-sm">State:</span>
+        <span v-if="farmerAcc" class="item__value text-base text-white">
+          {{ parseFarmerState(farmerAcc) }}
+        </span>
+        <span v-else class="item__value text-base text-white">{{ '--' }}</span>
+      </li>
+      <li class="item flex flex-col md:flex-row md:gap-4 mb-5 pb-5">
+        <span class="item__label text-sm">Your identity:</span>
+        <span v-if="farmerAcc" class="truncate text-white leading-4">{{
+          farmerAcc.identity.toBase58()
+        }}</span>
+        <span v-else class="text-white leading-4">{{ '--' }}</span>
+      </li>
+      <li class="item flex flex-col md:flex-row md:gap-4 mb-5 pb-5">
+        <span class="item__label text-sm">Associated vault:</span>
+        <span v-if="farmerAcc" class="truncate text-white leading-4">{{
+          farmerAcc.vault.toBase58()
+        }}</span>
+        <span v-else class="text-white leading-4">{{ '--' }}</span>
+      </li>
+      <li
+        class="item flex flex-row justify-between md:justify-start md:gap-4 mb-5 pb-5"
+      >
+        <span class="item__label text-sm">DiamondHands staked</span>
+        <span v-if="farmerAcc" class="text-base text-white">{{
+          farmerAcc.gemsStaked
+        }}</span>
+        <span v-else class="text-base text-white">{{ '--' }}</span>
+      </li>
+      <li
+        class="item flex flex-row justify-between md:justify-start md:gap-4 mb-5 pb-5"
+      >
+        <span class="item__label text-sm">Minimum staking ends</span>
+        <span v-if="farmerAcc" class="text-base text-white">{{
+          parseDate(farmerAcc.minStakingEndsTs)
+        }}</span>
+        <span v-else class="text-base text-white">{{ '--' }}</span>
+      </li>
+    </ul>
 
-    <div class="flex mb-5">
-      <div class="flex-1 mr-5">
+    <div class="flex mb-5 gap-x-4">
+      <div class="flex-1">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardA"
           :farmReward="farmAcc.rewardA"
           :reward="farmerAcc.rewardA"
-          title="Reward A"
+          title="DMNDS"
         />
       </div>
       <div class="flex-1">
-        <div class="hidden md:flex w-full md:w-1/2 mb-12 md:mb-0">
-          <div class="faq flex flex-col p-6 w-full rounded-lg">
+        <div class="hidden md:flex w-full">
+          <div class="faq flex flex-col w-full rounded-lg">
             <span class="text-base text-white mb-5">How to stack?</span>
 
             <ul class="mb-4">
@@ -165,7 +196,10 @@
         </div>
       </div>
     </div>
-    <button class="nes-btn is-primary mb-5" @click="refreshFarmer">
+    <button
+      class="block w-full text-base text-white refresh rounded py-4 btnHeight md:max-w-xs md:m-auto"
+      @click="refreshFarmer"
+    >
       Refresh account
     </button>
   </div>
@@ -228,4 +262,142 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.acc-container {
+  border: 1px solid #404040;
+  border-radius: 4px;
+  padding: 24px 32px;
+}
+
+.footer {
+  position: static;
+  width: 100%;
+  background-color: transparent;
+}
+.footerSticky {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+}
+.bordered {
+  border-top: 1px solid #404040;
+}
+.item {
+  border-bottom: 1px solid #404040;
+}
+@media (min-width: 600px) {
+  .item__label {
+    min-width: 180px;
+  }
+  .reward__label {
+    color: #d0d0d0;
+    min-width: 160px;
+  }
+}
+.item__label {
+  color: #d0d0d0;
+}
+.item__value {
+  color: #fff;
+}
+.truncate {
+  max-width: 360px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.truncate:hover {
+  white-space: unset;
+  text-overflow: unset;
+}
+.refresh {
+  border: 1px solid #ffffff;
+}
+.rewardTitle {
+  color: #909090;
+}
+.farmerLabel {
+  color: #999999;
+}
+.farmerInput {
+  padding: 22px 16px;
+  background: transparent;
+  border: 1px solid #404040;
+}
+.farmerBtn {
+  background: linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
+  border-radius: 4px;
+}
+.staking {
+  color: #141414;
+  background: linear-gradient(192.54deg, #9be15d 2.01%, #00e3ae 97.9%),
+    linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
+}
+.claim {
+  color: #141414;
+  background: linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
+}
+.reward {
+  background: linear-gradient(
+      90deg,
+      rgba(251, 199, 212, 0.04) 0%,
+      rgba(151, 150, 240, 0.04) 100%
+    ),
+    #191819;
+}
+.reward__fixed {
+  color: #909090;
+}
+.reward__item {
+  border-bottom: 1px solid #141414;
+}
+.btnHeight {
+  max-height: 56px;
+}
+.faqMobile {
+  height: max-content;
+  color: #a1a1a1;
+}
+.faq {
+  border: 1px solid #1d1d1d;
+  height: max-content;
+  color: #a1a1a1;
+  padding: 16px;
+}
+.videoFrame {
+  min-height: 186px;
+}
+.walletOverflow {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 768px) {
+  .videoFrame {
+    min-height: 286px;
+  }
+}
+.accord__label:after {
+  content: '+';
+  position: absolute;
+  right: 1em;
+  color: #fff;
+}
+input:checked + .accord__label:after {
+  content: '-';
+  line-height: 0.8em;
+}
+.accordion__content {
+  max-height: 0em;
+  transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+input[name='panel']:checked ~ .accordion__content {
+  /* Get this as close to what height you expect */
+  max-height: min-content;
+}
+.accord {
+  border: 1px solid #1d1d1d;
+}
+.btnHeight {
+  /* max-height: 56px; */
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="nes-container with-title">
-    <p class="title">{{ title }}</p>
+  <div class="faq with-title">
+    <p class="text-base text-white mb-5">{{ title }}</p>
     <slot />
     <div class="flex flex-wrap">
       <NFTCard
@@ -35,4 +35,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.faq {
+  border: 1px solid #1d1d1d;
+  height: max-content;
+  color: #a1a1a1;
+}
+</style>

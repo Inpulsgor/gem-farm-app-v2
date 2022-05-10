@@ -1,6 +1,6 @@
 <template>
-  <div class="nes-container with-title">
-    <p class="title">{{ title }}</p>
+  <div class="faq with-title rounded">
+    <p class="text-base text-white mb-5">{{ title }}</p>
     <div class="mb-2">Accrued reward: {{ reward.accruedReward }}</div>
     <div class="mb-2">Paid out reward: {{ reward.paidOutReward }}</div>
     <div v-if="parseRewardType(farmReward) === 'variable'">
@@ -20,21 +20,15 @@
       <div class="mb-2">
         Staking begins: {{ parseDate(reward.fixedRate.beginStakingTs) }}
       </div>
-      <div class="mb-2">
+      <!-- <div class="mb-2">
         Schedule begins: {{ parseDate(reward.fixedRate.beginScheduleTs) }}
-      </div>
+      </div> -->
       <div class="mb-2">
         Last updated: {{ parseDate(reward.fixedRate.lastUpdatedTs) }}
       </div>
       <div class="mb-2">
         Promised duration: {{ reward.fixedRate.promisedDuration }}
       </div>
-      <div class="mb-2">Promised schedule:</div>
-      <FixedScheduleDisplay
-        :key="farmReward"
-        class="ml-5"
-        :schedule="reward.fixedRate.promisedSchedule"
-      />
     </div>
   </div>
 </template>

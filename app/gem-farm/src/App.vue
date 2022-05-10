@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto relative h-full min-h-screen flex flex-col justify-center align-middle"
+    class="container mx-auto py-8 relative h-full min-h-screen flex flex-col justify-center align-middle"
   >
     <div class="flex justify-center align-middle mb-8">
       <p class="text-4xl text-white">Diamond Farm</p>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7s
+// TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
 export default {
   components: {},
 };

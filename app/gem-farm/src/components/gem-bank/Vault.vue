@@ -1,6 +1,6 @@
 <template>
   <!--control buttons-->
-  <div class="mb-10 flex justify-center">
+  <div class="mb-10 flex justify-center gap-4">
     <button
       v-if="
         (toWalletNFTs && toWalletNFTs.length) ||

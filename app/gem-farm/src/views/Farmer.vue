@@ -41,33 +41,36 @@
       >
         <button
           v-if="farmerState === 'staked' && selectedNFTs.length > 0"
-          class="nes-btn is-primary mr-5"
+          class="is-primary w-6/12 rounded max-w-xs py-4 text-base font-medium btnHeight"
           @click="addGems"
         >
           Add Gems (resets staking)
         </button>
         <button
           v-if="farmerState === 'unstaked'"
-          class="nes-btn is-success mr-5"
+          class="is-success w-6/12 rounded max-w-xs py-4 text-base font-medium staking btnHeight"
           @click="beginStaking"
         >
           Begin staking
         </button>
         <button
           v-if="farmerState === 'staked'"
-          class="nes-btn is-error mr-5"
+          class="is-error w-6/12 rounded max-w-xs py-4 text-base font-medium staking btnHeight"
           @click="endStaking"
         >
           End staking
         </button>
         <button
           v-if="farmerState === 'pendingCooldown'"
-          class="nes-btn is-error mr-5"
+          class="is-error w-6/12 rounded max-w-xs py-4 text-base font-medium staking btnHeight"
           @click="endStaking"
         >
           End cooldown
         </button>
-        <button class="nes-btn is-warning" @click="claim">
+        <button
+          class="is-warning w-6/12 rounded max-w-xs py-4 text-base font-medium claim btnHeight"
+          @click="claim"
+        >
           Claim {{ availableA }} A
         </button>
       </Vault>
