@@ -45,7 +45,7 @@
       </li>
     </ul>
 
-    <div class="flex mb-5 gap-x-4">
+    <div class="flex flex-col md:flex-row mb-5 gap-x-4">
       <div class="flex-1">
         <FarmerRewardDisplay
           :key="farmerAcc.rewardA"
