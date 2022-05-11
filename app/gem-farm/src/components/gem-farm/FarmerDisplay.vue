@@ -197,7 +197,7 @@
       </div>
     </div>
     <button
-      class="block w-full text-base text-white refresh rounded py-4 btnHeight md:max-w-xs md:m-auto"
+      class="block w-full text-base text-white refresh rounded py-4 md:max-w-xs md:m-auto"
       @click="refreshFarmer"
     >
       Refresh account

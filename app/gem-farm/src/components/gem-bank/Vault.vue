@@ -1,21 +1,24 @@
 <template>
-  <!--control buttons-->
-  <div class="mb-10 flex justify-center gap-4">
+  <div
+    v-if="
+      (toWalletNFTs && toWalletNFTs.length) ||
+      (toVaultNFTs && toVaultNFTs.length)
+    "
+    class="mb-10 flex justify-center"
+  >
     <button
-      v-if="
-        (toWalletNFTs && toWalletNFTs.length) ||
-        (toVaultNFTs && toVaultNFTs.length)
-      "
-      class="nes-btn is-primary mr-5"
+      class="block w-full text-base text-white refresh rounded py-4 btnHeight md:max-w-xs md:m-auto"
       @click="moveNFTsOnChain"
     >
-      Move Gems!
+      <span v-if="toVaultNFTs.length > 0">Move NFTs to Vault</span>
+      <span v-else-if="toWalletNFTs.length > 0">Move NFTs to Wallet</span>
+      <span v-else>Move NFTs</span>
     </button>
     <slot />
   </div>
 
   <!--wallet + vault view-->
-  <div class="flex items-stretch">
+  <div class="flex md:flex-col items-stretch mb-12">
     <!--left-->
     <NFTGrid
       title="Your wallet"
@@ -25,15 +28,17 @@
     />
 
     <!--mid-->
-    <div class="m-2 flex flex-col">
+    <div
+      class="flex flex-col md:flex-row px-5 md:px-0 md:py-4 md:gap-4 mt-9 md:mt-0 justify-center"
+    >
       <ArrowButton
         :disabled="vaultLocked"
-        class="my-2"
+        class="my-2 md:my-0"
         @click="moveNFTsFE(false)"
       />
       <ArrowButton
         :disabled="vaultLocked"
-        class="my-2"
+        class="my-2 md:my-0"
         :left="true"
         @click="moveNFTsFE(true)"
       />
@@ -49,9 +54,9 @@
     >
       <div
         v-if="vaultLocked"
-        class="locked flex-col justify-center items-center align-center"
+        class="locked flex flex-col justify-center items-center align-center rounded-lg"
       >
-        <p class="mt-10">This vault is locked!</p>
+        <p class="">This vault is locked!</p>
       </div>
     </NFTGrid>
   </div>
@@ -312,5 +317,10 @@ export default defineComponent({
   left: 0;
   opacity: 0.7;
   z-index: 10;
+}
+.btnHeight {
+  max-height: 56px;
+  color: #141414;
+  background: linear-gradient(90deg, #fbc7d4 0%, #9796f0 100%), #4aaf47;
 }
 </style>

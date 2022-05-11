@@ -1,14 +1,16 @@
 <template>
-  <div class="faq with-title">
-    <p class="text-base text-white mb-5">{{ title }}</p>
-    <slot />
-    <div class="flex flex-wrap">
-      <NFTCard
-        v-for="nft in nfts"
-        :key="nft"
-        :nft="nft"
-        @selected="handleSelected"
-      />
+  <div>
+    <p class="title text-sm mb-4">{{ title }}</p>
+    <div class="tokens p-2 rounded-lg relative">
+      <slot />
+      <div class="flex flex-wrap">
+        <NFTCard
+          v-for="nft in nfts"
+          :key="nft"
+          :nft="nft"
+          @selected="handleSelected"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -36,9 +38,21 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.faq {
-  border: 1px solid #1d1d1d;
-  height: max-content;
-  color: #a1a1a1;
+.title {
+  color: #d0d0d0;
+}
+.tokens {
+  min-height: 200px;
+  background: linear-gradient(
+      90deg,
+      rgba(251, 199, 212, 0.04) 0%,
+      rgba(151, 150, 240, 0.04) 100%
+    ),
+    #191819;
+}
+@media (min-width: 768px) {
+  .tokens {
+    min-height: 170px;
+  }
 }
 </style>
