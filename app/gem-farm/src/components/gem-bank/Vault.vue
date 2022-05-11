@@ -14,6 +14,8 @@
       <span v-else-if="toWalletNFTs.length > 0">Move NFTs to Wallet</span>
       <span v-else>Move NFTs</span>
     </button>
+  </div>
+  <div class="flex justify-center gap-4 mb-4 md:mb-0">
     <slot />
   </div>
 
