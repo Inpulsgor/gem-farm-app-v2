@@ -57,67 +57,43 @@
       <div class="flex-1">
         <div class="hidden md:flex w-full">
           <div class="faq flex flex-col w-full rounded-lg">
-            <span class="text-base text-white mb-5">How to stack?</span>
+            <span class="text-base text-white mb-5">How to unstake</span>
 
             <ul class="mb-4">
               <li class="text-sm mb-3">
-                1. Make sure you are using the wallet which contains your DH NFT
+                1. Make sure you are using the wallet which contains your DH NFT.
               </li>
               <li class="text-sm mb-3">
-                2. Open your browser and go to the staking link
+                2. You should see your staking information and vault with your staked NFTs appear.
               </li>
               <li class="text-sm mb-3">
-                3. In the bar at bottom please select the wallet you are using
-                and connect
+                3. Scroll down and click the end staking button. Wait for around 30-40 seconds to see if the transaction has gone through.
+                You will know if the transaction has gone through within those 40 seconds as the frontend will update if so. 
+                If the transaction has not gone through then simply press the button again.
               </li>
               <li class="text-sm mb-3 walletOverflow">
-                4. In the address bar please input
-                8EV1K3kWmq2hbRtQfnBg3wbvELEorJajbyJhRGwVptwj and click the new
-                farmer button
+                4. You can check how well Solana is handling transactions with the link below and scrolling down to the TPS and ping time graphs
+                https://explorer.solana.com/
+                We reccomend refreshing the page once every transaction has gone through to make sure it is displaying everything correctly.
               </li>
               <li class="text-sm mb-3">
-                5. This will allow you to start staking
+                5. At this point you should see the End Cooldown button appear in the same place as the End Staking button was.
+                If it hasn't simply refresh the page and the page will update to reflect the current state. Do not be afraid to refresh the page!
               </li>
               <li class="text-sm mb-3">
-                6. Once the transaction goes through - the page will
-                autopopulate
+                6. Once the Cooldown is ended you should see your vault unlock.
+                We have succesfully unstaked our NFT - we just need to move back into our wallet from the vault. 
               </li>
               <li class="text-sm mb-3">
-                7. Select you DH NFT by clicking on it and move it to the vault
-                by clicking the arrow
+                7. Select your DH NFT by clicking on it and move it to your wallet by clicking the up arrow. 
               </li>
               <li class="text-sm mb-3">
-                8. Click the green 'Move to Vault' button that has appeared and
-                approve the transaction
+                8. Once it appears it in your wallet a 'MOVE NFT..' button will appear. Once again click it to initialise the transfer.  
               </li>
               <li class="text-sm mb-3">
-                9. Once the NFT has moved to the vault select it and now click
-                the begin staking button
-              </li>
-              <li class="text-sm mb-3">
-                10. You will see your status update change to say 'staked'
-              </li>
-              <li class="text-sm mb-3">
-                11. All done! Come back later and follow the process above - and
-                then scroll down and click the Refresh account button to see how
-                many tokens you've received!
-              </li>
-              <li class="text-sm mb-3">
-                12. Once you've refreshed the account you'll see the claim token
-                button update with the number of tokens you can claim
-              </li>
-              <li class="text-sm">
-                13. Go ahead and claim those tokens! Make sure to come back to
-                claim your rewards weekly
+                9. When the transaction has gone through that's it - we're all done. Your DMNDS will be sent directly to your wallet moving forwards!
               </li>
             </ul>
-            <iframe
-              class="videoFrame"
-              title="Inline Frame Example"
-              allowFullScreen
-              src="https://www.youtube.com/embed/7B9krM5zQCw"
-            >
-            </iframe>
           </div>
         </div>
 
@@ -184,13 +160,6 @@
                   claim your rewards weekly
                 </li>
               </ul>
-              <iframe
-                class="videoFrame"
-                title="Inline Frame Example"
-                allowFullScreen
-                src="https://www.youtube.com/embed/7B9krM5zQCw"
-              >
-              </iframe>
             </div>
           </div>
         </div>

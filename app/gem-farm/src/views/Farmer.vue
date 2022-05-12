@@ -1,7 +1,7 @@
 <template>
   <ConfigPane />
   <div v-if="!wallet" class="text-center text-gray-500">
-    Pls connect (burner) wallet
+    Pls connect your wallet
   </div>
   <div v-else>
     <!--farm address-->
@@ -77,7 +77,7 @@
     </div>
     <div v-else>
       <div class="w-full text-center pt-4">
-        Farmer account not found :( Create a new one?
+        Account not found - Please input TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
       </div>
     </div>
   </div>
