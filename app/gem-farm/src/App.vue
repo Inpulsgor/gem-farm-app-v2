@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
 export default {
   components: {},
 };

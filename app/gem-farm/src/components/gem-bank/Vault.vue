@@ -15,12 +15,12 @@
       <span v-else>Move NFTs</span>
     </button>
   </div>
-  <div class="flex justify-center gap-4 mb-4 md:mb-0">
+  <div class="flex justify-center gap-4 mb-4 md:mb-8">
     <slot />
   </div>
 
   <!--wallet + vault view-->
-  <div class="flex md:flex-col items-stretch mb-12">
+  <div class="flex flex-col items-stretch mb-12">
     <!--left-->
     <NFTGrid
       title="Your wallet"
@@ -31,7 +31,7 @@
 
     <!--mid-->
     <div
-      class="flex flex-col md:flex-row px-5 md:px-0 md:py-4 md:gap-4 mt-9 md:mt-0 justify-center"
+      class="flex flex-row px-5 md:px-0 md:py-4 gap-4 mt-9 md:mt-0 justify-center"
     >
       <ArrowButton
         :disabled="vaultLocked"

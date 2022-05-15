@@ -77,7 +77,8 @@
     </div>
     <div v-else>
       <div class="w-full text-center pt-4">
-        Account not found - Please input TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
+        Account not found - Please input
+        TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
       </div>
     </div>
   </div>
@@ -103,6 +104,11 @@ export default defineComponent({
 
     let gf: any;
     watch([wallet, cluster], async () => {
+      if (cluster.value === 'mainnet') {
+        farm.value = 'TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7';
+      }
+
+      // TXXfHyyABWbjrbyZkageC5B6sz77m9DEhWf2DrDX1w7
       await freshStart();
     });
 
